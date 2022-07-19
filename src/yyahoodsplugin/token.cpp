@@ -54,8 +54,8 @@ void Token::update(const std::wstring& symbol) {
 
     const std::string* cookieHeader = headers.find(COOKIE_HEADER);
 
-    if (cookieHeader != 0) {
-      cookie = cookieHeader->substr(0, cookieHeader->find(";"));
+    if (cookieHeader == 0) {
+//      cookie = cookieHeader->substr(0, cookieHeader->find(";"));
 
       boost::smatch result;
       if (boost::regex_search(*html, result, CRUMB_REGEX)) {
